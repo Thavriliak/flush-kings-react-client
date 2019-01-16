@@ -5,10 +5,6 @@ const Restroom = props => {
   console.log(props)
   return (
     <div>
-      <div className="addLocLink">
-        <Link to="/add-post">Add a new post</Link>
-        <Link to="/delete-post">Remove a post</Link>
-      </div>
       <div>
         <h3>Restrooms in Providence</h3>
         <p>{props.data.name_of_establishment}</p>

@@ -5,8 +5,9 @@ const Location = props => {
   console.log(props)
   return (
     <div>
-      <h3>Locations in Providence</h3>
-      <p>{props.data.area}</p>
+      <div>
+        <h1>{props.data.area}</h1>
+      </div>
     </div>
   )
 }

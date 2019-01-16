@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Location from './Location.js'
-import { axiosGetLocationApi } from '../../ApiWork'
+import { Link } from 'react-router-dom'
 
 class LocationIndex extends Component {
   constructor(props) {
@@ -16,19 +16,24 @@ class LocationIndex extends Component {
       .then(res => {
         this.setState({ locations: res.data.locations })
       })
+      .catch(console.error)
   }
 
   render() {
 
-    const Locations = this.state.locations.map((location, index) => {
+    const Locations = this.state.locations.map((data, index) => {
       return (
-        <Location key={index} location={location} />
+        <Location key={index} data={data} />
       )
     })
 
     return (
-      <div>
-        {Locations}
+      <div className="addLocLink">
+        <Link to="/add-post">Add a new post</Link>
+        <Link to="/delete-post">Remove a post</Link>
+        <div>
+          {Locations}
+        </div>
       </div>
     )
   }

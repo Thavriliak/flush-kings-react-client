@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Restroom from './Restroom.js'
+import { Link } from 'react-router-dom'
 
 
 
@@ -29,7 +30,13 @@ class RestroomIndex extends Component {
 
     return (
       <div>
-        {Restrooms}
+        <div className="RestLinks">
+          <Link to="/add-post">Add a new post</Link>
+          <Link to="/delete-post">Remove a post</Link>
+        </div>
+        <div>
+          {Restrooms}
+        </div>
       </div>
     )
   }
