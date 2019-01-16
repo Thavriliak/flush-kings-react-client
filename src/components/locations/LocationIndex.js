@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Location from './Location.js'
+import { axiosGetLocationApi } from '../../ApiWork'
 
 class LocationIndex extends Component {
   constructor(props) {
@@ -19,9 +20,9 @@ class LocationIndex extends Component {
 
   render() {
 
-    const Locations = this.state.locations.map((data, index) => {
+    const Locations = this.state.locations.map((location, index) => {
       return (
-        <Location key={index} data={data} />
+        <Location key={index} location={location} />
       )
     })
 

@@ -8,7 +8,12 @@ import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
-import LocationIndex from './LocationIndex.js'
+import LocationIndex from './components/locations/LocationIndex.js'
+import LocationAdd from './components/locations/LocationAdd.js'
+import RestroomIndex from './components/restrooms/RestroomIndex.js'
+import Home from './components/Home.js'
+import RestroomDelete from './components/restrooms/RestroomDelete.js'
+import RestroomAdd from './components/restrooms/RestroomAdd.js'
 
 class App extends Component {
   constructor () {
@@ -43,6 +48,7 @@ class App extends Component {
         {flashMessage && <h3 className={flashType}>{flashMessage}</h3>}
         <div>
           <div>
+            <Route exact path='/' component={Home} />
             <Route path='/sign-up' render={() => (
               <SignUp flash={this.flash} setUser={this.setUser} />
             )} />
@@ -56,6 +62,10 @@ class App extends Component {
               <ChangePassword flash={this.flash} user={user} />
             )} />
             <Route path="/locations" component={LocationIndex} />
+            <AuthenticatedRoute path="/add-location" component={LocationAdd} />
+            <Route path="/restrooms" component={RestroomIndex} />
+            <AuthenticatedRoute path="/delete-post" component={RestroomDelete} />
+            <AuthenticatedRoute path="/add-post" component={RestroomAdd} />
           </div>
         </div>
       </React.Fragment>
