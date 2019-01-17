@@ -14,6 +14,7 @@ import RestroomIndex from './components/restrooms/RestroomIndex.js'
 import Home from './components/Home.js'
 import RestroomDelete from './components/restrooms/RestroomDelete.js'
 import RestroomAdd from './components/restrooms/RestroomAdd.js'
+import RestroomUpdate from './components/restrooms/RestroomUpdate.js'
 
 class App extends Component {
   constructor () {
@@ -62,10 +63,11 @@ class App extends Component {
               <ChangePassword flash={this.flash} user={user} />
             )} />
             <Route path="/locations" component={LocationIndex} />
-            <AuthenticatedRoute path="/add-location" component={LocationAdd} />
+            <Route path="/add-location" component={LocationAdd} />
             <Route path="/restrooms" component={RestroomIndex} />
-            <AuthenticatedRoute path="/delete-post" component={RestroomDelete} />
-            <AuthenticatedRoute path="/add-post" component={RestroomAdd} />
+            <Route path="/delete-post" component={RestroomDelete} />
+            <Route path="/add-post" component={RestroomAdd} />
+            <Route path="/update-post" component={RestroomUpdate} />
           </div>
         </div>
       </React.Fragment>

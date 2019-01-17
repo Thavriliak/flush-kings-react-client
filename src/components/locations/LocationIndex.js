@@ -28,12 +28,8 @@ class LocationIndex extends Component {
     })
 
     return (
-      <div className="addLocLink">
-        <Link to="/add-post">Add a new post</Link>
-        <Link to="/delete-post">Remove a post</Link>
-        <div>
-          {Locations}
-        </div>
+      <div>
+        {Locations}
       </div>
     )
   }

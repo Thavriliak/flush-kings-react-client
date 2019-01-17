@@ -5,23 +5,48 @@ import './Header.scss'
 
 const authenticatedOptions = (
   <React.Fragment>
-    <Link to="/locations">Locations</Link>
-    <Link to="/restrooms">Restrooms</Link>
-    <Link to="/change-password">Change Password</Link>
-    <Link to="/sign-out">Sign Out</Link>
+    <div className="dropdown">
+      <button className="dropbtn">Locations</button>
+      <div className="dropdown-content">
+        <Link to="/locations">All PVD Locations</Link>
+        <Link to="/add-location">Add a PVD Location</Link>
+        <Link to="/delete-location">Delete a PVD Location</Link>
+      </div>
+    </div>
+    <div className="dropdown">
+      <button className="dropbtn">Restrooms</button>
+      <div className="dropdown-content">
+        <Link to="/restrooms">All Restroom Posts</Link>
+        <Link to="/add-post">Make a new Post</Link>
+        <Link to="/update-post">Update a Post</Link>
+      </div>
+    </div>
+    <div className="dropdown">
+      <button className="dropbtn">Sign Out / Password Change</button>
+      <div className="dropdown-content">
+        <Link to="/change-password" className="dropbtn">Change Password</Link>
+        <Link to="/sign-out" className="dropbtn">Sign Out</Link>
+      </div>
+    </div>
   </React.Fragment>
 )
 
 const unauthenticatedOptions = (
   <React.Fragment>
-    <Link to="/sign-up">Sign Up</Link>
-    <Link to="/sign-in">Sign In</Link>
+    <div className="dropdown">
+      <Link to="/sign-up" className="dropbtn">Sign Up</Link>
+    </div>
+    <div className="dropdown">
+      <Link to="/sign-in" className="dropbtn">Sign In</Link>
+    </div>
   </React.Fragment>
 )
 
 const alwaysOptions = (
   <React.Fragment>
-    <Link to="/">Home</Link>
+    <div className="dropdown">
+      <Link to="/" className="dropbtn">Home</Link>
+    </div>
   </React.Fragment>
 )
 

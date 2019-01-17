@@ -30,10 +30,6 @@ class RestroomIndex extends Component {
 
     return (
       <div>
-        <div className="RestLinks">
-          <Link to="/add-post">Add a new post</Link>
-          <Link to="/delete-post">Remove a post</Link>
-        </div>
         <div>
           {Restrooms}
         </div>

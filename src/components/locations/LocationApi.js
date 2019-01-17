@@ -10,3 +10,12 @@ export const axiosPostLocation = (data, user) => {
   })
 }
 
+export const axiosPatchLocation = (data, user) => {
+  const { id } = data
+  delete data.id
+  return axios.patch(apiUrl + '/locations/' + id, { location: { ...data } }, {
+    headers: {
+      'Authorization': `Token token=${user.token}`,
+    }
+  })
+}
