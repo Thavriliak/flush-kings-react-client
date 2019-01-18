@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { axiosPostRestroom } from './RestroomApi.js'
 // import { user } from '../auth/components/AuthenticatedRoute.js'
 
 //the name of the component should match the name
@@ -27,7 +28,7 @@ class RestroomAdd extends Component {
     // some jsx
 
     createRestroom = (event) => {
-      console.log(user)
+      console.log(event)
       event.preventDefault()
 
       // validating a few of our form values
@@ -36,18 +37,18 @@ class RestroomAdd extends Component {
 
       // post request to create a single movie using axios
       if (EstValid) {
-        axios.post('http://localhost:4741/restrooms', {
-          restroom: {
-            name_of_establishment: '',
-            cleanliness: '',
-            smell: '',
-            number_of_toilets: null,
-            handicap_accessible: null,
-            baby_care: null,
-            hours: '',
-            message: null
-          }
-        })
+        axiosPostRestroom(data, this.props.user)
+          // , {
+          // restroom: {
+          //   name_of_establishment: '',
+          //   cleanliness: '',
+          //   smell: '',
+          //   number_of_toilets: null,
+          //   handicap_accessible: null,
+          //   baby_care: null,
+          //   hours: '',
+          //   message: null
+          // }
           .then(res => this.setState({ message: `made a new post with ID: ${res.data.restroom.id}` }))
           .catch(console.error)
       } else {

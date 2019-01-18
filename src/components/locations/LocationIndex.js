@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Location from './Location.js'
 import { Link } from 'react-router-dom'
+import { axiosGetLocationsAuthenticated } from './LocationApi.js'
 
 class LocationIndex extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class LocationIndex extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4741/locations')
+    event.preventDefault()
+    axiosGetLocationsAuthenticated(this.props.user)
       .then(res => {
         this.setState({ locations: res.data.locations })
       })

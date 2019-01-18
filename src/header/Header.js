@@ -19,10 +19,11 @@ const authenticatedOptions = (
         <Link to="/restrooms">All Restroom Posts</Link>
         <Link to="/add-post">Make a new Post</Link>
         <Link to="/update-post">Update a Post</Link>
+        <Link to="/delete-post">Delete a Post</Link>
       </div>
     </div>
     <div className="dropdown">
-      <button className="dropbtn">Sign Out / Password Change</button>
+      <button className="dropbtn">Account Options</button>
       <div className="dropdown-content">
         <Link to="/change-password" className="dropbtn">Change Password</Link>
         <Link to="/sign-out" className="dropbtn">Sign Out</Link>
@@ -34,10 +35,11 @@ const authenticatedOptions = (
 const unauthenticatedOptions = (
   <React.Fragment>
     <div className="dropdown">
-      <Link to="/sign-up" className="dropbtn">Sign Up</Link>
-    </div>
-    <div className="dropdown">
-      <Link to="/sign-in" className="dropbtn">Sign In</Link>
+      <button className="dropbtn">Sign Up / Sign In</button>
+      <div className="dropdown-content">
+        <Link to="/sign-up" className="dropbtn">Sign Up</Link>
+        <Link to="/sign-in" className="dropbtn">Sign In</Link>
+      </div>
     </div>
   </React.Fragment>
 )
@@ -45,7 +47,10 @@ const unauthenticatedOptions = (
 const alwaysOptions = (
   <React.Fragment>
     <div className="dropdown">
-      <Link to="/" className="dropbtn">Home</Link>
+      <button className="dropbtn">Home</button>
+      <div className="dropdown-content">
+        <Link to="/" className="dropbtn">Go to Homepage</Link>
+      </div>
     </div>
   </React.Fragment>
 )

@@ -7,7 +7,7 @@ export const axiosGetRestrooms = () => {
 }
 
 export const axiosGetRestroomsAuthenticated = (user) => {
-  return axios.get(apiUrl + '/movies', {
+  return axios.get(apiUrl + '/restrooms', {
     headers: {
       'Authorization': `Token token=${user.token}`
     }
@@ -15,7 +15,7 @@ export const axiosGetRestroomsAuthenticated = (user) => {
 }
 
 export const axiosPostRestroom = (data, user) => {
-  return axios.post(apiUrl + '/movies', { movie: { ...data } }, {
+  return axios.post(apiUrl + '/restrooms', { restroom: { ...data } }, {
     headers: {
       'Authorization': `Token token=${user.token}`,
     }
@@ -25,7 +25,7 @@ export const axiosPostRestroom = (data, user) => {
 export const axiosPatchRestroom = (data, user) => {
   const { id } = data
   delete data.id
-  return axios.patch(apiUrl + '/movies/' + id, { movie: { ...data } }, {
+  return axios.patch(apiUrl + '/restrooms/' + id, { movie: { ...data } }, {
     headers: {
       'Authorization': `Token token=${user.token}`,
     }

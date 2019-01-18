@@ -6,7 +6,7 @@ const Location = props => {
   return (
     <div>
       <div>
-        <h1>{props.data.area}</h1>
+        <h4>{props.data.area}</h4>
       </div>
     </div>
   )

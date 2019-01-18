@@ -48,7 +48,7 @@ class App extends Component {
         <Header user={user} />
         {flashMessage && <h3 className={flashType}>{flashMessage}</h3>}
         <div>
-          <div>
+          <div className="bod">
             <Route exact path='/' component={Home} />
             <Route path='/sign-up' render={() => (
               <SignUp flash={this.flash} setUser={this.setUser} />
@@ -62,12 +62,30 @@ class App extends Component {
             <AuthenticatedRoute user={user} path='/change-password' render={() => (
               <ChangePassword flash={this.flash} user={user} />
             )} />
-            <Route path="/locations" component={LocationIndex} />
-            <Route path="/add-location" component={LocationAdd} />
-            <Route path="/restrooms" component={RestroomIndex} />
-            <Route path="/delete-post" component={RestroomDelete} />
-            <Route path="/add-post" component={RestroomAdd} />
-            <Route path="/update-post" component={RestroomUpdate} />
+            <AuthenticatedRoute user={user} path='/locations' render={() => (
+              <LocationIndex flash={this.flash} user={user} />
+            )} />
+            <AuthenticatedRoute user={user} path='/restrooms' render={() => (
+              <RestroomIndex flash={this.flash} user={user} />
+            )} />
+            <AuthenticatedRoute user={user} path='/delete-post' render={() => (
+              <RestroomDelete flash={this.flash} user={user} />
+            )} />
+            <AuthenticatedRoute user={user} path='/add-post' render={() => (
+              <RestroomAdd flash={this.flash} user={user} />
+            )} />
+            <AuthenticatedRoute user={user} path='/update-post' render={() => (
+              <RestroomUpdate flash={this.flash} user={user} />
+            )} />
+            <AuthenticatedRoute user={user} path='/add-location' render={() => (
+              <LocationAdd flash={this.flash} user={user} />
+            )} />
+            {/* <Route path="/locations" component={LocationIndex} /> */}
+            {/* <Route path="/add-location" component={LocationAdd} /> */}
+            {/* <Route path="/restrooms" component={RestroomIndex} /> */}
+            {/* <Route path="/delete-post" component={RestroomDelete} /> */}
+            {/* <Route path="/add-post" component={RestroomAdd} /> */}
+            {/* <Route path="/update-post" component={RestroomUpdate} /> */}
           </div>
         </div>
       </React.Fragment>

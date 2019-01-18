@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Restroom from './Restroom.js'
 import { Link } from 'react-router-dom'
+import { axiosGetRestroomsAuthenticated } from './RestroomApi.js'
 
 
 
@@ -14,10 +15,12 @@ class RestroomIndex extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4741/restrooms')
+    event.preventDefault()
+    axiosGetRestroomsAuthenticated(this.props.user)
       .then(res => {
         this.setState({ restrooms: res.data.restrooms })
       })
+      .catch(console.error)
   }
 
   render() {
@@ -30,9 +33,7 @@ class RestroomIndex extends Component {
 
     return (
       <div>
-        <div>
-          {Restrooms}
-        </div>
+        {Restrooms}
       </div>
     )
   }
