@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:4741'
+const apiUrl = 'https://boiling-oasis-18540.herokuapp.com'
 
 export const handleErrors = res => {
   if (res.ok) {

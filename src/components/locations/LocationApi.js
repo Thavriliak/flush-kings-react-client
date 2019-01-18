@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const apiUrl = 'http://localhost:4741'
+const apiUrl = 'https://boiling-oasis-18540.herokuapp.com'
 
 export const axiosGetLocationsAuthenticated = (user) => {
   return axios.get(apiUrl + '/locations', {
